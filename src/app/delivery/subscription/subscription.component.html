@@ -1,0 +1,51 @@
+<form [formGroup]="planForm" (ngSubmit)="onSubmit()" class="card p-4 shadow-sm">
+  <h3 class="mb-4"> Create Meal Subscription Plan</h3>
+
+  <div class="mb-3">
+    <label for="name" class="form-label">Plan Name</label>
+    <input formControlName="name" id="name" class="form-control" required />
+  </div>
+
+  <div class="mb-3">
+    <label for="description" class="form-label">Description</label>
+    <textarea formControlName="description" id="description" rows="3" class="form-control"></textarea>
+  </div>
+
+  <div class="mb-3">
+    <label for="mealType" class="form-label">Meal Type</label>
+    <select formControlName="mealType" id="mealType" class="form-select">
+      <option value="" disabled>Select meal type</option>
+      <option value="BREAKFAST">Breakfast</option>
+      <option value="LUNCH">Lunch</option>
+      <option value="DINNER">Dinner</option>
+    </select>
+  </div>
+
+  <div class="mb-3">
+    <label for="mealFrequency" class="form-label">Meal Frequency</label>
+    <select formControlName="mealFrequency" id="mealFrequency" class="form-select">
+      <option value="" disabled>Select frequency</option>
+      <option value="DAILY">Daily</option>
+      <option value="WEEKLY">Weekly</option>
+    </select>
+  </div>
+
+  <div class="mb-3">
+    <label for="durationInWeeks" class="form-label">Duration (in weeks)</label>
+    <input type="number" formControlName="durationInWeeks" id="durationInWeeks" class="form-control" />
+  </div>
+
+  <div class="mb-3">
+    <label for="price" class="form-label">Price (₹)</label>
+    <input type="number" formControlName="price" id="price" class="form-control" />
+  </div>
+
+  <div class="form-check mb-3">
+    <input type="checkbox" class="form-check-input" formControlName="isActive" id="isActive" />
+    <label class="form-check-label" for="isActive">Is Active?</label>
+  </div>
+
+  <button type="submit" class="btn btn-primary" [disabled]="planForm.invalid">
+    Create Plan
+  </button>
+</form>

@@ -1,0 +1,44 @@
+.footer {
+  background-color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+
+}
+
+.footer h6 {
+  margin-bottom: 1rem;
+}
+
+.footer a {
+  text-decoration: none;
+  color: #555;
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 14px;
+}
+
+.footer a:hover {
+  color: #e23744;
+}
+
+.footer .logo {
+  height: 40px;
+}
+
+.instagram{
+    width:20px;
+    height:20px;
+}
+.twitter{
+    width:20px;
+    height:20px;
+}
+.facebook{
+    width:20px;
+    height:20px;
+}
+
+
+.linkedin{
+    width:20px;
+    height:20px;
+}

@@ -1,0 +1,359 @@
+/* #backgroundVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.7; /* Optional: makes content more readable */
+
+.back {
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV626dapoOfdh9DwzqOmITjUG9v-zBW9Zozw&s');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+ 
+
+
+
+/* General Container Styles */
+.subscriptions-container {
+  padding-top: 6rem;
+  padding-bottom: 4rem;
+  
+  text-align: center;
+
+}
+ 
+/* Heading Styles */
+h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #f97316;
+  margin-bottom: 2rem;
+  letter-spacing: 1px; /* Adds spacing between letters */
+  text-transform: uppercase; /* Makes the text bold and prominent */
+  position: relative;
+}
+ 
+h1::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: #f97316;
+  margin: 0.5rem auto; /* Adds space between heading and underline */
+  border-radius: 2px;
+}
+ 
+/* Plans Grid Layout */
+.plans-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+ 
+@media (min-width: 768px) {
+  .plans-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+ 
+/* Plan Card Styles */
+.plan-card {
+  background-color: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  border: 2px solid transparent;
+}
+ 
+.plan-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+  border-color: #f97316;
+}
+ 
+/* Popular Plan Highlight */
+.popular-plan {
+  border: 3px solid #f97316;
+  transform: scale(1.07);
+  background: linear-gradient(to bottom right, #fff7ed, #ffedd5);
+}
+ 
+.popular-badge {
+  background-color: #f97316;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 1rem;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+ 
+/* Pricing Section */
+.plan-price {
+  font-size: 10rem;
+  font-weight: 900;
+  color: #f97316;
+  margin: 1rem 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+ 
+.plan-price span {
+  font-size: 5rem;
+  font-weight: 600;
+  color: #fa7900;
+}
+ 
+/* Features List */
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+ 
+.features-list li {
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+  color: #4b5563;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ 
+.features-list li::before {
+  content: '✔️';
+  margin-right: 0.5rem;
+  color: #f97316;
+}
+ 
+/* Subscribe Button */
+.subscribe-button {
+  width: 100%;
+  background-color: #f97316;
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+ 
+.subscribe-button:hover {
+  background-color: #ea580c;
+  transform: scale(1.05);
+}
+ 
+/* Features Section */
+.features-section {
+  margin-top: 4rem;
+  padding: 0 20px;
+}
+ 
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+ 
+@media (min-width: 768px) {
+  .features-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+ 
+.feature-item {
+  text-align: center;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+ 
+.feature-item:hover {
+  transform: translateY(-8px);
+}
+ 
+/* Feature Icon Styles */
+.feature-icon {
+  background-color: #ffedd5;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-size: 2rem;
+  transition: background-color 0.3s ease;
+}
+ 
+.feature-item:hover .feature-icon {
+  background-color: #f97316;
+  color: white;
+}
+/* Form Popup Background */
+.form-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Form Container */
+/* Form Popup Background */
+.form-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Form Container */
+.form-popup form {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 80vh; /* Limits form height */
+  overflow-y: auto; /* Enables vertical scrolling */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 0.3s ease-in-out;
+  margin-top: 12rem; /* Ensures it appears below the navbar */
+}
+
+/* Custom Scrollbar (optional) */
+.form-popup form::-webkit-scrollbar {
+  width: 8px;
+}
+
+.form-popup form::-webkit-scrollbar-thumb {
+  background: #f97316; /* Scrollbar color */
+  border-radius: 4px;
+}
+
+.form-popup form::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Track color */
+}
+
+
+
+/* Input Row - Two Inputs in One Line */
+.input-row {
+  display: flex;
+  gap: 10px; /* Space between inputs */
+}
+
+.input-row div {
+  flex: 1; /* Make both inputs take equal space */
+}
+
+/* Input Fields */
+.form-popup input,
+.form-popup select {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Submit & Cancel Buttons */
+.submit-button,
+.cancel-button {
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.submit-button {
+  background: #ff6600;
+  color: white;
+}
+
+.cancel-button {
+  background: #ccc;
+}
+
+.submit-button:hover {
+  background: #e65c00;
+}
+
+.cancel-button:hover {
+  background: #b3b3b3;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+.back {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full page */
+  overflow: hidden;
+}
+
+.back video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: 1;
+}
+

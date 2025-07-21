@@ -1,0 +1,17 @@
+{
+  "TITLE": "Settings Page",
+  "DARK_MODE": "Enable Dark Mode",
+  "NOTIFICATIONS": "Notification Preferences",
+  "EMAIL": "Email",
+  "SMS": "SMS",
+  "PUSH": "Push Notifications",
+  "LANGUAGE": "Language Options",
+  "USERNAME": "Username",
+  "EMAIL_LABEL": "Email",
+  "ACCOUNT": "Account Management",
+  "PRIVACY": "Privacy Settings",
+  "PROFILE_VISIBLE": "Profile Visible to Others",
+  "SEARCH_INDEX": "Allow Search Engine Indexing",
+  "SAVE": "Save Settings",
+  "TIFFINO": "Tiffino"
+}

@@ -1,0 +1,26 @@
+
+<div class="card shadow-sm p-3 mb-5 bg-white rounded">
+  <div class="card-body">
+    <h5 class="card-title mt-2">Filter by State</h5>
+    <select class="form-select w-100 mb-3" [(ngModel)]="selectedstate" (change)="onStateChange()">
+      <option value="">All States</option>
+      <option *ngFor="let region of regions" [value]="region">{{ region }}</option>
+    </select>
+
+    <h5 class="card-title">Filter by Type</h5>
+    <select class="form-select w-100 mb-3" [(ngModel)]="selectedMode" (change)="onSelectFilter()">
+      <option value="">All</option>
+      <option value="vegetarian">Vegetarian</option>
+      <option value="non-vegetarian">Non-Vegetarian</option>
+      <option value="vegan">Vegan</option>
+    </select>
+
+    <h5 class="card-title">Dietary Preferences</h5>
+    <div class="form-check" *ngFor="let option of dietaryOptions">
+      <input class="form-check-input" type="checkbox" [value]="option" (change)="onDietaryCheckboxChange($event)">
+      <label class="form-check-label">{{ option }}</label>
+    </div>
+
+    <button class="btn btn-outline-danger mt-3 w-100" (click)="clearFilters()">Clear Filters</button>
+  </div>
+</div>

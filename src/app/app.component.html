@@ -1,0 +1,105 @@
+
+<!--<div class="navbar">
+  
+  <div class="navbar-left">
+   
+     <div class="menu-icon" (click)="toggleSidebar()">☰</div>
+     <div class="sidebar" [class.open]="isSidebarOpen">
+  <span class="close-btn" (click)="toggleSidebar()">×</span>
+  <ul>
+    <li><a routerLink="/foodcart" class="nav-link">Food Cart</a></li>
+    <li><a routerLink="/membership-plan" class="nav-link">Membership Plan</a></li>
+    <li><a routerLink="/menu" class="nav-link">Menu</a></li>
+    <li><a routerLink="/ordertrack" class="nav-link">Order Tracking</a></li>
+    <li><a routerLink="/offers" class="nav-link">Offers & Rewards</a></li>
+    <li><a routerLink="/restaurant" class="nav-link">Restaurant</a></li>
+    <li><a routerLink="/checkpayment" class="nav-link">Checkout</a></li>
+    <li><a routerLink="/review" class="nav-link">Rating & Review</a></li>
+  </ul>
+</div>
+</div>
+    <div class="search-box ">
+      <input type="text" placeholder="Search for food..." />
+      <span class="search-icon">🔍</span>
+    </div>
+  
+
+  
+  <ul class="nav-links">
+    <li><a routerLink="/" class="nav-link">Home</a></li>
+    <li><a routerLink="/cuisines" class="nav-link">Cuisines</a></li>
+    <li><a routerLink="/subscriptions" class="nav-link">Subscriptions</a></li>
+    <li><a routerLink="/login" class="nav-link">Login</a></li>
+    <li><a routerLink="/register" class="nav-link">Register</a></li>
+    <li><a routerLink="/contact" class="nav-link">Contact</a></li>
+    <li><a routerLink="/profile" class="nav-link">Profile</a></li>
+    <li><a routerLink="/admin-login" class="nav-link">Admin Login</a></li>
+    <li><a routerLink="/addtocart" class="nav-link icon rounded-2"><img src="assets/images/Add to cart.jpg" alt="Cart" /></a></li>
+    <li><a routerLink="/wishlist" class="nav-link icon"><img src="assets/images/wish 1.PNG" alt="Wishlist" /></a></li>
+    <li><a routerLink="/login" class="nav-link">Login</a></li>
+    <li><a routerLink="/register" class="nav-link">Register</a></li>
+  </ul>
+
+ 
+ 
+</div>-->
+<nav class="navbar">
+<div class="navbar-left">
+  <h1 class="heading"> <!--<img src="assets/Pause GIF image.gif" alt="Welcome GIF" style="height: 40px;width:40px;border-radius:60px;" />-->TIFFINO</h1>
+
+     <div class="sidebar" [class.open]="isSidebarOpen">
+  <span class="close-btn bg-whiete " (click)="toggleSidebar()">×</span>
+  <ul>
+    <li><a routerLink="/foodcart" class="nav-link">Food Cart</a></li>
+    <li><a routerLink="/MembershipPlan" class="nav-link">Membership Plan</a></li>
+    <li><a routerLink="/menu" class="nav-link">Menu</a></li>
+    <li><a routerLink="/ordertrack" class="nav-link">Order Tracking</a></li>
+    <li><a routerLink="/offers" class="nav-link">Offers & Rewards</a></li>
+    <li><a routerLink="/restaurant" class="nav-link">Restaurant</a></li>
+    <li><a routerLink="/checkpayment" class="nav-link">Checkout</a></li>
+    <li><a routerLink="/review" class="nav-link">Rating & Review</a></li>
+    <li><a routerLink="/settings" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear-fill" viewBox="0 0 16 16">
+  <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"/>
+</svg> settings</a></li>
+       
+  </ul>
+</div>
+</div>
+
+<div class="search-box ">
+<input type="text" placeholder="Search dishes" class="searchboxi text-dark" />
+<span class="search-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+</svg></span> <!-- Unicode search icon -->
+</div>
+
+ 
+  <div class="navbar-center">
+<a routerLink="/" class="nav-link ">Home</a>
+
+<a routerLink="/cuisines" class="nav-link">Cuisines</a>
+<a routerLink="/subscriptions" class="nav-link">Subscription</a>
+<a routerLink="/contact" class="nav-link">Contact</a>
+<a routerLink="/profile" class="nav-link">Profile</a>
+ <a routerLink="/admin-login" class="nav-link">Admin Login</a>
+ <a routerLink="/addtocart" class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="black" class="bi bi-cart-plus-fill" viewBox="0 0 16 16">
+  <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0M9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0"/>
+</svg></a>
+ <a routerLink="/wishlist" class="  icon"><svg xmlns="http://www.w3.org/2000/svg"fill="black" width="30" height="30" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 446.04"><path d="M252.63 71.41C285.88 36.72 309.17 6.75 360.44.86c96.22-11.07 184.7 87.44 136.11 184.43-.43.85-.88 1.71-1.33 2.58-27.38-23.8-63.15-38.22-102.25-38.22-43.06 0-82.07 17.47-110.29 45.7-28.23 28.23-45.7 67.23-45.7 110.29s17.47 82.06 45.7 110.29l.15.15-30.2 29.96-59.71-57.51C121.09 319.33 3.95 232.26.09 124.36-2.62 48.79 57.02.37 125.62 1.27c61.31.8 87.08 31.31 127.01 70.14zm120.41 187.25c-.04-5.88-.59-10.08 6.71-9.97l23.61.28c7.62-.04 9.64 2.37 9.56 9.51v27.24h27.03c5.88-.05 10.08-.59 9.97 6.7l-.28 23.61c.04 7.62-2.37 9.65-9.51 9.56h-27.21v27.21c.08 7.14-1.94 9.56-9.56 9.51l-23.61.28c-7.3.11-6.75-4.09-6.71-9.96v-27.04h-27.23c-7.14.09-9.56-1.94-9.51-9.56l-.29-23.61c-.1-7.29 4.1-6.75 9.97-6.7h27.06v-27.06zm19.93-72.05c32.87 0 62.63 13.32 84.17 34.86S512 272.77 512 305.64c0 32.88-13.33 62.64-34.86 84.17-21.54 21.54-51.31 34.86-84.17 34.86-32.88 0-62.64-13.32-84.17-34.86-21.54-21.54-34.87-51.3-34.87-84.17 0-32.88 13.33-62.63 34.86-84.17 21.54-21.54 51.31-34.86 84.18-34.86zm71.79 47.23c-18.37-18.37-43.75-29.74-71.79-29.74-28.04 0-53.43 11.37-71.81 29.74-18.37 18.37-29.73 43.76-29.73 71.8s11.36 53.43 29.74 71.8c18.37 18.37 43.75 29.74 71.8 29.74 28.03 0 53.42-11.37 71.8-29.74 18.37-18.37 29.73-43.76 29.73-71.8s-11.36-53.43-29.74-71.8z"/></svg></a><!-- Shopping bag icon -->
+<div class="menu-icon" (click)="toggleSidebar()"><img src="assets/menu-bar.png" style="width:30px;height:30px;border-radius: 40px;"/>
+</div>
+  <a routerLink="/login" class="login-btn">Log In</a>
+<a routerLink="/register" class="login-btn">Register</a>
+<!-- Add dropdown items if needed -->
+</div>
+  <div class="navbar-right">
+<!-- Heart icon -->
+
+</div>
+</nav>
+
+
+
+<router-outlet></router-outlet>
+
+

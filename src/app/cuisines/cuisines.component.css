@@ -1,0 +1,109 @@
+:host {
+  display: block;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+ 
+#carouselExampleAutoplaying {
+  width: 100%;
+}
+ 
+.carousel-img {
+  height: 300px;      
+  object-fit: cover;    
+}
+ 
+.carousel-img {
+  height: 300px;
+  object-fit: cover;
+  border-radius: 40px;
+}
+ 
+@media (max-width: 768px) {
+  .carousel-img {
+    height: 200px;
+  }
+}
+ 
+ 
+.card-container {
+  display: flex;
+  justify-content: space-around;
+  background-color: #ff6200;
+  padding: 40px 20px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+ 
+.offer-card {
+  background-color: #fff;
+  border-radius: 24px;
+  padding: 16px;
+  width: 280px;
+  text-align: left;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  height: auto;
+}
+ 
+.offer-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+ 
+.offer-card .sub {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+ 
+.offer-card .offer {
+  font-size: 1.2rem;
+  color: #ff6200;
+  margin-bottom: 12px;
+}
+ 
+.offer-card .card-img {
+  max-height: 100px;
+  margin-bottom: 16px;
+}
+ 
+.offer-card .arrow {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  font-size: 1.5rem;
+  color: #ff6200;
+}
+ 
+ 
+.card {
+  border: none;
+  transition: transform 0.2s ease-in-out;
+}
+ 
+.card:hover {
+  transform: scale(1.03);
+}
+ 
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+ 
+.badge {
+  font-size: 0.8rem;
+  padding: 0.4em 0.6em;
+}
+ 
+/* cusinefilter.component.css */
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+ 
+.form-check-label {
+  margin-left: 0.5em;
+}
+ 

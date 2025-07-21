@@ -1,0 +1,81 @@
+<div class="contact-container">
+  <div class="slider">
+    <!-- Optional blinking logo image -->
+    <!-- <img src="assets/images/logo.png" alt="Logo" /> -->
+  </div>
+
+  <div class="contact-content">
+    <!-- Left: Video -->
+    <div class="logo-container">
+      <video autoplay muted loop playsinline>
+        <source src="assets/videos/customer-care.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <!-- Right: Form or Spinner or Success Message -->
+    <div class="form-container">
+      <h2>Contact Us</h2>
+
+      <!-- Spinner -->
+      <div *ngIf="isSubmitting" class="spinner-container">
+        <div class="spinner"></div>
+        <p>Submitting...</p>
+      </div>
+
+     <div *ngIf="isSubmitted" class="card success-card">
+           <img src="assets/images/check.png" style="width:40px;height:40px" alt="imgsri"/>
+        <h3>Thank you!</h3>
+        <p class="h3">Your message has been submitted successfully.</p>
+        <p class="h3">Our Team will contact you for Next 24 hours</p>
+        <button class="btn-success w-25 h-25 justify-content-center" (click)="close()">Back</button>
+      </div> <!-- Success Card -->
+      
+
+      <!-- Form -->
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" *ngIf="!isSubmitting && !isSubmitted">
+        <fieldset>
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input
+              type="text"
+              id="name"
+              formControlName="name"
+              placeholder="Enter your full name"
+            />
+            <div class="error" *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.invalid">
+              Name is required.
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              formControlName="email"
+              placeholder="Enter your email"
+            />
+            <div class="error" *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.invalid">
+              Enter a valid email.
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              formControlName="message"
+              placeholder="Enter your message"
+            ></textarea>
+            <div class="error" *ngIf="contactForm.get('message')?.touched && contactForm.get('message')?.invalid">
+              Message is required.
+            </div>
+          </div>
+
+          <button type="submit" [disabled]="contactForm.invalid">Submit</button>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>

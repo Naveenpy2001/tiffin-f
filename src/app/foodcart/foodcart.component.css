@@ -1,0 +1,194 @@
+/* Section Title */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+
+/* Card Container - Stylish Grid */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    margin: 5% auto;
+    max-width: 1100px;
+}
+
+
+.section-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  color: #ff6600; /* Bright orange */
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  margin: 40px 0;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: #ff6600;
+  margin: 10px auto 0;
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(255, 102, 0, 0.6);
+}
+
+.section-title:hover {
+  color: #e65c00;
+  text-shadow: 0 2px 10px rgba(255, 102, 0, 0.6);
+  cursor: pointer;
+}
+
+
+
+/* Card Styling */
+.restaurant-card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.restaurant-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Bestseller Tag */
+.bestseller-tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: linear-gradient(45deg, #ff9800, #ff5722);
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px 12px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Food Image */
+.food-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 2px solid #ddd;
+    transition: transform 0.3s ease-in-out;
+}
+
+.restaurant-card:hover .food-image {
+    transform: scale(1.05);
+}
+
+/* Card Content */
+.card-content {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Food Title */
+.food-title {
+    font-size: 22px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Details Section */
+.details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 12px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Rating */
+.rating {
+    background: #28a745;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+/* Price */
+.price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #e44d26;
+}
+
+/* Hide default checkbox */
+.custom-checkbox {
+    display: none;
+}
+
+/* Custom checkbox design */
+.customizable {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: #007bff;
+    cursor: pointer;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+
+.customizable::before {
+    content: "⬜";
+    font-size: 16px;
+    margin-right: 8px;
+    transition: 0.3s;
+}
+
+.custom-checkbox:checked + .customizable::before {
+    content: "✅";
+    color: #007bff;
+}
+
+/* Add Button */
+.add-btn {
+    width: 100%;
+    background: linear-gradient(90deg, #ff512f, #dd2476);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.add-btn:hover {
+    background: linear-gradient(90deg, #dd2476, #ff512f);
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .card-container {
+        grid-template-columns: 1fr;
+    }
+}

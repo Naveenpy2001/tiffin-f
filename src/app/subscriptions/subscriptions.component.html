@@ -1,0 +1,226 @@
+<div class="back1">
+<div class="back">
+<div class="container mt-3 d-flex justify-content-end">
+  <button class="btn btn-outline-primary w-25" (click)="showActiveCard = !showActiveCard">
+    <i class="bi bi-eye-fill me-2 fs-5"></i>
+    {{ showActiveCard ? 'Hide Active Subscription' : 'View Active Subscription' }}
+  </button>
+</div>
+
+
+
+<!-- Active Subscription Card -->
+<div class="container mt-4 fade-toggle" *ngIf="activeSubscription && showActiveCard">
+  <div class="card shadow-lg border-0 rounded-4 bg-light">
+    <div class="card-body p-4">
+      <h4 class="card-title text-center text-success fw-bold mb-4 d-flex">
+        <i class="bi bi-person-vcard me-2 fs-2 text-success "></i>Your Active Subscription
+      </h4>
+
+      <!-- Subscription Details -->
+      <div class="row text-secondary">
+        <div class="col-md-6 mb-3">
+          <p><i class="bi bi-box2-heart me-2 text-danger"></i><strong>Plan:</strong> {{ activeSubscription.subscriptionPlan.name }}</p>
+          <p><i class="bi bi-patch-check-fill me-2 text-primary"></i><strong>Status:</strong> 
+            <span class="badge bg-info text-dark">{{ activeSubscription.status }}</span>
+          </p>
+          <p><i class="bi bi-calendar-check me-2 text-success"></i><strong>Start:</strong> {{ activeSubscription.startDate }}</p>
+          <p><i class="bi bi-calendar-x me-2 text-danger"></i><strong>End:</strong> {{ activeSubscription.endDate }}</p>
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <p><i class="bi bi-clock-history me-2 text-warning"></i><strong>Next Renewal:</strong> {{ activeSubscription.nextRenewalDate }}</p>
+          <p><i class="bi bi-currency-exchange me-2 text-info"></i><strong>Billing Cycle:</strong> {{ activeSubscription.customizations.billingCycle }}</p>
+          <p><i class="bi bi-fire me-2 text-danger"></i><strong>Spice Level:</strong> {{ activeSubscription.customizations.spiceLevel }}</p>
+        </div>
+      </div>
+
+      <!-- Control Buttons -->
+      <div class="text-center mt-4">
+        <button class=" w-25 btn btn-warning btn-sm rounded-pill px-4 me-2 shadow-sm" (click)="pausesubscription()">
+          <i class="bi bi-pause-circle  me-1 fs-5"></i> Pause
+        </button>
+
+        <button class="w-25 btn btn-success btn-sm rounded-pill px-4 me-2 shadow-sm" (click)="resumesubscription()">
+          <i class="bi bi-play-circle me-1 fs-5"></i> Resume
+        </button>
+
+        <button class=" w-25 btn btn-danger btn-sm rounded-pill px-4 shadow-sm" (click)="cancelsubscription()" >
+          <i class="bi bi-x-circle me-1 fs-5" ></i> Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container mt-4">
+ 
+  </div>
+  <!-- ✅ Plans Grid -->
+  <div class="row">
+    <div *ngFor="let plan of plans" class="col-md-6 col-lg-4 mb-4">
+      <div class="card shadow-sm border-0 h-100 rounded-3">
+        <div class="card-body">
+          <h5 class="card-title text-center text-primary fw-bold">
+            <i class="bi bi-box2-heart me-2 text-danger"></i>{{ plan.name }}
+          </h5>
+          <p class="card-text text-muted text-center mb-3">
+            {{ plan.description }}
+          </p>
+
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item border-0">
+              <i class="bi bi-egg-fried text-warning me-2 fs-5"></i>
+              <strong>Meal Type:</strong> {{ plan.mealType }}
+            </li>
+            <li class="list-group-item border-0">
+              <i class="bi bi-calendar-range text-success me-2 fs-5"></i>
+              <strong>Frequency:</strong> {{ plan.mealFrequency }}
+            </li>
+            <li class="list-group-item border-0">
+              <i class="bi bi-clock-history text-info me-2 fs-5"></i>
+              <strong>Duration:</strong> {{ plan.durationInWeeks }} weeks
+            </li>
+            <li class="list-group-item border-0">
+              <i class="bi bi-currency-rupee text-dark me-2 fs-5"></i>
+              <strong>Price:</strong> ₹{{ plan.price }}
+            </li>
+            <li class="list-group-item border-0" *ngIf="plan.isActive">
+              <i class="bi bi-check-circle-fill text-success me-2 fs-5"></i>
+              <strong>Status:</strong> Active
+            </li>
+            <li class="list-group-item border-0" *ngIf="!plan.isActive">
+              <i class="bi bi-x-circle-fill text-danger me-2 fs-5"></i>
+              <strong>Status:</strong> Inactive
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- Subscription Form -->
+<div class="back">
+  <div class="split-screen">
+    <!-- Left Side Image -->
+    <div class="left-side">
+      <div class="card shadow-lg border-0 rounded-4 overflow-hidden my-5">
+        <div class="row g-0">
+          <div class="col-md-5 d-flex justify-content-center align-items-center bg-white p-4">
+            <img src="./assets/fitness.webp" alt="Journey" class="img-fluid" style="max-height: 300px;" />
+          </div>
+          <div class="col-md-7  d-flex flex-column justify-content-center align-items-center p-5 text-center">
+            <h2 class="text-danger fw-bold mb-3">Start Your Journey</h2>
+            <p class="text-muted mb-4">Custom meal subscriptions made just for you!</p>
+            <a routerLink="/" class="btn btn-danger px-4 py-2">Back to Home</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Side Form -->
+    <div class="right-side">
+      <div class="subscription-container">
+        <h2>Subscribe to a Plan</h2>
+
+        <!-- Plan Dropdown -->
+        <label>Select a Plan</label>
+        <select [(ngModel)]="selectedPlanId" class="form-control" name="plan" required>
+          <option value="" disabled selected>Select Plan</option>
+          <option *ngFor="let plan of plans" [value]="plan.id">
+            {{ plan.name }} - ₹{{ plan.price }} ({{ plan.durationInWeeks }} weeks)
+          </option>
+        </select>
+
+        <!-- Form Start -->
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+          <label>Meal Type</label>
+          <select formControlName="MealType" class="form-control mb-2">
+            <option value="BREAKFAST">BREAKFAST</option>
+            <option value="DINNER">DINNER</option>
+            <option value="LUNCH">LUNCH</option>
+            <option value="SNACK">SNACK</option>
+          </select>
+
+          <label>Billing Cycle</label>
+          <select formControlName="BillingCycle" class="form-control mb-2">
+            <option value="DAILY">DAILY</option>
+            <option value="WEEKLY">WEEKLY</option>
+            <option value="MONTHLY">MONTHLY</option>
+            <option value="QUARTERLY">QUARTERLY</option>
+            <option value="YEARLY">YEARLY</option>
+          </select>
+
+          <label>Spice Level</label>
+          <select formControlName="SpiceLevel" class="form-control mb-2">
+            <option value="MILD">MILD</option>
+            <option value="MEDIUM">MEDIUM</option>
+            <option value="SPICY">SPICY</option>
+            <option value="EXTRA_SPICY">EXTRA_SPICY</option>
+          </select>
+
+          <label>Status</label>
+          <select formControlName="SubscriptionStatus" class="form-control mb-2">
+            <option value="ACTIVE">ACTIVE</option>
+            <option value="PAUSED">PAUSED</option>
+            <option value="CANCELLED">CANCELLED</option>
+            <option value="EXPIRED">EXPIRED</option>
+          </select>
+
+          <div class="form-check form-switch d-flex align-items-center gap-2 my-3">
+            <input class="form-check-input" type="checkbox" formControlName="autoRenew" id="autoRenewSwitch" />
+            <label class="form-check-label mb-0" for="autoRenewSwitch">Enable Auto-Renew</label>
+          </div>
+
+          <label>Dietary Restrictions</label>
+          <input type="text" formControlName="dietaryRestrictions" class="form-control mb-3" />
+
+          <button type="submit" class="btn btn-danger w-100">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div *ngIf="isLoading" class="spinner-overlay">
+  <div class="spinner"></div>
+</div>
+
+<!-- ✅ Success Popup -->
+<div class="popup-overlay" *ngIf="showpopup">
+  <div class="popup-card">
+    <div class="popup-icon">
+      <img src="assets/images/check.png" style="width:40px;height:40px" alt="imgsri"/>
+    </div>
+    <h4>subsciption Successful</h4>
+    <p><strong>ID:</strong> {{ userData?.id }}</p>
+    <p><strong>Name:</strong> {{ userData?.firstName }} {{ userData?.lastName }}</p>
+    <p><strong>Email:</strong> {{ userData?.email }}</p>
+    <p><strong>Phone:</strong> {{ userData?.phoneNumber }}</p>
+   <!---- <p><strong>Date Joined:</strong> {{ userData?.dateJoined }}</p>
+    <p><strong>Last Login:</strong> {{ userData?.lastLogin }}</p>-->
+    <h4><a routerLink="/login" class="btn btn-danger">Login</a></h4>
+  </div>
+</div>
+
+
+<div class="error-overlay" *ngIf="showErrorPopup">
+  <div class="error-card">
+    <div class="error-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="red" class="bi bi-x-circle" viewBox="0 0 16 16">
+        <path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+      </svg>
+    </div>
+    <h4>subscription Failed</h4>
+    <p>{{ errorMessage }}</p>
+    <button class="btn btn-danger mt-3" (click)="showErrorPopup = false">Close</button>
+  </div>
+</div>
+

@@ -1,0 +1,104 @@
+ <div class="back">
+ 
+<div class="subscriptions-container">
+  <div class="container mx-auto px-4">
+  <h1 class="text-3xl font-bold text-center mb-12">Subscription Plans</h1>
+   
+      <!-- Plans Grid -->
+  <div class="plans-grid">
+  <!-- Single Meal Plan -->
+  <div class="plan-card">
+  <div class="text-center">
+  <h3 class="text-xl font-semibold mb-4">Single Meal</h3>
+  <div class="text-4xl font-bold text-orange-500 mb-4">
+  
+              ₹1900<span class="text-lg text-gray-500">/month</span>
+  </div>
+  <p class="text-gray-600 mb-6">Perfect for lunch or dinner</p>
+  </div>
+  <ul class="features-list">
+  <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> One meal per day</li>
+  <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Free delivery</li>
+  <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Weekly menu rotation</li>
+  </ul>
+
+  </div>
+   
+        <!-- Two Meals Plan -->
+  <div class="plan-card popular-plan">
+  <div class="text-center">
+  <span class="popular-badge">Popular</span>
+  <h3 class="text-xl font-semibold mb-4 mt-2">Two Meals</h3>
+  <div class="text-4xl font-bold text-orange-500 mb-4">
+  
+              ₹3599<span class="text-lg text-gray-500">/month</span>
+  </div>
+  <p class="text-gray-600 mb-6">Lunch and dinner covered</p>
+  </div>
+  <ul class="features-list">
+  <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Two meals per day</li>
+  <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Free delivery</li>
+  <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Weekly menu rotation</li>
+  <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Priority support</li>
+  </ul>
+  
+  </div>
+   
+        <!-- Full Day Plan -->
+  <div class="plan-card (click)=">
+  <div class="text-center">
+  <h3 class="text-xl font-semibold mb-4">Full Day</h3>
+  <div class="text-4xl font-bold text-orange-500 mb-4">
+  
+              ₹5999<span class="text-lg text-gray-500">/month</span>
+  </div>
+  <p class="text-gray-600 mb-6">All meals covered</p>
+  </div>
+  <ul class="features-list">
+  <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Three meals per day</li>
+  <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Free delivery</li>
+  <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Weekly menu rotation</li>
+  <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Priority support</li>
+  <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Customizable menu</li>
+  </ul>
+
+  
+  </div>
+  </div>
+  </div>
+  </div>
+   
+  <!-- Subscription Form Modal -->
+  <div *ngIf="isFormVisible" class="form-popup">
+
+      <label>Full Name</label>
+  <input formControlName="fullName" type="text" required />
+   
+      <label>Email</label>
+  <input formControlName="email" type="email" required />
+   
+      <label>Phone Number</label>
+  <input formControlName="phoneNumber" type="text" required />
+   
+      <label>Start Date</label>
+  <input formControlName="startDate" type="date" readonly />
+   
+      <label>End Date</label>
+  <input formControlName="endDate" type="date" readonly />
+   
+      <label>Total Amount</label>
+  <input formControlName="totalAmount" type="number" readonly />
+   
+      <label>Payment Plan</label>
+
+  <option value="WEEKLY">Weekly</option>
+  <option value="BI_WEEKLY">Bi-Weekly</option>
+  <option value="MONTHLY" selected>Monthly</option>
+
+   
+      <button type="submit" class="submit-button">Submit</button>
+
+
+  </div>
+  </div>
+   <!-- </div> -->

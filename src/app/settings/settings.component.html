@@ -1,0 +1,106 @@
+<div class="settings-container">
+  <div class="top-right-menu">
+  <div class="menu-icon" (click)="toggleMenu()">
+    <i class="bi bi-three-dots"></i> <!-- This is the 3-dots icon -->
+  </div>
+
+  <div class="dropdown" *ngIf="showMenu">
+    <button (click)="toggleMenu()"><i class="bi bi-x "></i></button>
+    <button (click)="logout()">Logout</button>
+    <button (click)="goToOrders()">My Orders</button>
+    <button (click)="goToHelp()">Help</button>
+  </div>
+</div>
+  <h2>Settings</h2>
+
+  <section class="setting-section">
+    <label>Enable Notifications</label>
+    <label class="switch">
+      <input type="checkbox" [(ngModel)]="notificationsEnabled" (change)="saveSettings()">
+      <span class="slider"></span>
+    </label>
+  </section>
+
+  <section class="setting-section">
+    <label>Language</label>
+    <select class="form-select w-2" [(ngModel)]="selectedLanguage" (change)="changeLanguage()">
+      <option value="en">English</option>
+      <option value="hi">हिंदी</option>
+    </select>
+  </section>
+
+  <section class="setting-section">
+    <label>Dark Mode</label>
+    <label class="switch">
+      <input type="checkbox" [(ngModel)]="darkMode" (change)="toggleTheme()">
+      <span class="slider"></span>
+    </label>
+  </section>
+
+  <section class="setting-section">
+    <label>Notification Sound</label>
+    <label class="switch">
+      <input type="checkbox" [(ngModel)]="notificationSound" (change)="saveSettings()">
+      <span class="slider"></span>
+    </label>
+  </section>
+
+  <section class="setting-section">
+    <label>Select Timezone</label>
+    <select class="form-select w-2" [(ngModel)]="selectedTimeZone" (change)="saveSettings()">
+      <option *ngFor="let zone of timeZones" [value]="zone">{{ zone }}</option>
+    </select>
+  </section>
+
+  <section class="setting-section">
+    <label>Pause Subscription</label>
+    <input type="checkbox" [(ngModel)]="pauseSubscription" (change)="saveSettings()">
+  </section>
+
+  <section class="setting-section">
+    <label>Zero-Cost Delivery</label>
+    <input type="checkbox" [(ngModel)]="zeroCostDelivery" (change)="saveSettings()">
+  </section>
+
+  <section class="setting-section">
+    <label>Eco-Friendly Packaging</label>
+    <input type="checkbox" [(ngModel)]="ecoPackaging" (change)="saveSettings()">
+  </section>
+
+  <section class="setting-section">
+    <label>Opt-out of Disposable Cutlery</label>
+    <input type="checkbox" [(ngModel)]="cutleryOptOut" (change)="saveSettings()">
+  </section>
+
+  <section class="setting-section">
+    <button class="btn btn-save" (click)="toggleEditProfile()">Edit Profile</button>
+    <button class="btn btn-secondary" (click)="togglePrivacyBox()">Privacy Settings</button>
+  </section>
+
+  <!-- Edit Profile Modal -->
+  <div *ngIf="showEditProfile" class="edit-profile-box">
+    <h3>Edit Profile</h3>
+    <label class="mt-2">Update Name:</label>
+    <input type="text" [(ngModel)]="userName" placeholder="Enter your name" class="form-control ">
+    <label class="form-label mt-2">Update Mobile Number:</label>
+    <input type="text" [(ngModel)]="usermobile" placeholder="Alternate Mobile Number" class="form-control">
+    <label class="form-label mt-2">Upload photo:</label>
+    <input type="file" (change)="onFileChange($event)" class="form-control ">
+    <div *ngIf="userPhoto">
+      <img [src]="userPhoto" alt="Preview" class="image-preview">
+    </div>
+    <div class="btn-group-vertical">
+      <button class="btn btn-save" (click)="saveProfile()">Save</button>
+      <button class="btn btn-danger" (click)="toggleEditProfile()">Cancel</button>
+    </div>
+  </div>
+
+  <!-- Privacy Settings Modal -->
+  <div *ngIf="showPrivacyBox" class="privacy-overlay">
+    <div class="privacy-box-modal">
+      <h3>Privacy Settings</h3>
+      <p>You can control how your data is used and shared.</p>
+      <button class="btn btn-danger" (click)="togglePrivacyBox()">Close</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="payment-container">
+  <h2>Complete Your Payment</h2>
+ 
+  <!-- PayPal Button Container -->
+  <div #paypalButtonContainer class="paypal-button-container"></div>
+ 
+  <!-- Transaction Success Message -->
+  <div *ngIf="payerName && payerEmail" class="transaction-success">
+    <h3>Transaction Successful</h3>
+    <div class="payer-details">
+      <img [src]="payerImage" alt="Payer's Profile" width="50" height="50" class="payer-image" />
+      <p><strong>Name:</strong> {{ payerName }}</p>
+      <p><strong>Email:</strong> {{ payerEmail }}</p>
+    </div>
+  </div>
+</div>

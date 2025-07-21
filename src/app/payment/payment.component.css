@@ -1,0 +1,38 @@
+.payment-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ 
+  padding: 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+ 
+ 
+}
+ 
+ 
+ 
+ 
+ 
+/* Success message container styling */
+.transaction-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #d4edda; /* Light green background */
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #c3e6cb;
+  max-width: 400px;
+  margin-top: 20px;
+  text-align: center;
+}
+ 
+/* Payer image styling */
+.payer-image {
+  border-radius: 50%;
+  margin-bottom: 10px;
+}

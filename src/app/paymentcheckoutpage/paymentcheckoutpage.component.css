@@ -1,0 +1,172 @@
+.checkout-card {
+  background: #fff;
+  max-width: 500px;
+  margin: auto;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.summary-section, .payment-section {
+  margin-bottom: 20px;
+}
+
+.summary-section ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.summary-section li {
+  padding: 5px 0;
+}
+
+.payment-section label {
+  display: block;
+  padding: 8px 0;
+  font-size: 16px;
+}
+
+
+/* Background styling for checkout card */
+.checkout-card {
+  background: linear-gradient(to right, #f0f8ff, #e6f7ff);
+  border: 1px solid #dee2e6;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.1);
+  margin: 2rem auto;
+  max-width: 600px;
+}
+
+/* Section headers */
+.summary-section,
+.payment-section {
+  background-color: #ffffff;
+  border: 1px solid #d1e7dd;
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.03);
+}
+
+/* Confirm button */
+.checkout-card .btn-success {
+  font-size: 1.2rem;
+  padding: 0.75rem;
+  box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3);
+}
+
+/* Table container */
+.container-fluid {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(108, 117, 125, 0.1);
+}
+
+/* Card enhancements */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Chart container background */
+.chart-container {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+}
+
+
+
+
+
+.feature-comparison {
+  width: 800px;
+  margin: 40px auto;
+  background: #f8f9fa;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+  padding: 30px;
+  overflow-x: auto;
+}
+
+.table-title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+  background-color: #ffffff;
+}
+
+.comparison-table th, .comparison-table td {
+  padding: 14px 20px;
+  text-align: center;
+  border: 1px solid #dee2e6;
+}
+
+.comparison-table th {
+  background-color: #0d6efd;
+  color: #fff;
+  font-weight: 600;
+}
+
+.comparison-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.comparison-table td:first-child {
+  text-align: left;
+  font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .comparison-table th,
+  .comparison-table td {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .table-title {
+    font-size: 22px;
+  }
+}
+
+
+
+.chart-container {
+  
+  max-width: 400px;
+  margin: 40px auto;
+  background-color: lch(94.25% 0.71 18.57);
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align:center;
+}
+canvas {
+  max-width: 100%;
+}
+
+.social{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 600px;
+}
+
+
+
+

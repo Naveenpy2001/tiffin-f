@@ -1,0 +1,92 @@
+<div class="review-section-bg">
+  <div class="review-container">
+    <h2>Leave a Review</h2>
+
+    <form [formGroup]="reviewForm" (ngSubmit)="submitReview()">
+      <!-- Star Rating -->
+      <div class="stars">
+        <i *ngFor="let star of [1, 2, 3, 4, 5]"
+           class="star"
+           [class.filled]="star <= (hoveredRating || currentRating)"
+           (click)="onStarClick(star)"
+           (mouseover)="onStarHover(star)"
+           (mouseleave)="onStarLeave()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="25" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+          </svg>
+        </i>
+      </div>
+
+      <!-- Review Text -->
+      <textarea formControlName="reviewText" placeholder="Write your review..." rows="4"></textarea>
+
+      <!-- Image Upload -->
+      <div class="upload-card">
+        <div class="card-body">
+          <div class="upload-header">
+            <i class="bi bi-camera-fill w-40"></i>
+            <span>Upload a Review Image</span>
+          </div>
+          <input type="file" (change)="onImageUpload($event)" class="file-input" />
+          <img *ngIf="imagePreview" [src]="imagePreview" class="preview" />
+        </div>
+      </div>
+
+      <button type="submit" [disabled]="reviewForm.invalid" class="rounded-1 btn btn-success">Submit Review</button>
+      <button type="button" (click)="shareOnInstagram()" class="btn btn-dark">📤 Share Review</button>
+    </form>
+
+    <!-- Community Favorites -->
+    <h3>Community Favorites</h3>
+    <div *ngFor="let fav of communityFavorites" class="favorite">
+      <strong>{{ fav.userId }}</strong> - {{ fav.rating }}
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+        <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+      </svg>
+      <p>{{ fav.comment }}</p>
+    </div>
+
+    <!-- All Reviews -->
+    <h3>All Reviews</h3>
+    <div *ngFor="let review of reviews" class="review card">
+      <div class="header">
+        <strong>User {{ review.userId }}</strong> - {{ review.rating }}
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+        </svg> - {{ review.status }}
+      </div>
+
+      <p>{{ review.comment }}</p>
+      <img *ngIf="review.photoUrls?.length" [src]="review.photoUrls[0]" class="review-img" />
+
+      <div class="actions">
+        <button (click)="likeReview(review)">
+          ❤️ {{ review.likes }}
+        </button>
+        <button (click)="share(review)">
+          🔗 Share
+        </button>
+      </div>
+
+      <!-- Comments Section -->
+      <div class="comments">
+        <div *ngFor="let c of review.comments" class="comment">
+          💬 {{ c.comment }}
+        </div>
+        <input [(ngModel)]="commentInputs[review.id]" placeholder="Add a comment..." />
+        <button (click)="addComment(review)">Post</button>
+      </div>
+    </div>
+
+    <!-- Social Icons -->
+    <h1 class="h1 text-center fw-bold mt-4">Click icon to post on Social Media</h1>
+    <div class="d-flex justify-content-center mt-2">
+      <a href="https://www.instagram.com/" target="_blank">
+        <img src="assets/instagram.png" width="50" height="50" style="margin-right: 20px;" />
+      </a>
+      <a href="https://www.facebook.com/" target="_blank">
+        <img src="assets/facebook.png" width="50" height="50" />
+      </a>
+    </div>
+  </div>
+</div>

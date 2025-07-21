@@ -1,0 +1,53 @@
+
+<div class="profile-container">
+  <h2> My Profile</h2>
+
+  <div class="info">
+    <label>Name:</label>
+    <p>{{ user.name }}</p>
+
+    <label>Email:</label>
+    <p>{{ user.email }}</p>
+
+    <label>Phone:</label>
+    <p>{{ user.phone }}</p>
+  </div>
+
+  <div class="section">
+    <h3>Favorite Meals</h3>
+    <ul>
+      <li *ngFor="let item of user.favorites">{{ item }}</li>
+    </ul>
+  </div>
+
+  <!-- <div class="section">
+    <h3>Order History</h3>
+    <ul>
+      <li *ngFor="let order of user.orderHistory">
+        {{ order.date }} – {{ order.item }}
+        <button class="small-btn">Reorder</button>
+      </li>
+    </ul>
+  </div> -->
+
+  <div class="section">
+    <h3>Custom Alerts</h3>
+    <ul>
+      <li *ngFor="let r of user.reminders">{{ r }}</li>
+    </ul>
+  </div>
+
+  <!-- <div class="section">
+    <h3>Order Tracking for Dependents</h3>
+    <ul>
+      <li *ngFor="let d of user.dependents">
+        {{ d.name }} — {{ d.lastOrder }} — <strong>{{ d.status }}</strong>
+      </li>
+    </ul>
+  </div> -->
+
+  <div class="edit-btn">
+    <button>Edit Profile</button>
+  </div>
+</div>
+>>>>>>> 523a6e4d0575248b6b46aa7f3e454636e5674ba9

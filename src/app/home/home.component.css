@@ -1,0 +1,200 @@
+
+.better-food-section {
+  position: relative;
+  background-color: #ffffff;
+  background-clip: border-box;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+ 
+}
+
+.center-text {
+  z-index: 2;
+}
+
+.headline {
+  font-size: 3.5rem;
+  color: #f0434a;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.headline span {
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.subtext {
+  color: #050505;
+  font-size: 1.5rem;
+  margin-top: 15px;
+  font-style: normal;
+  font-weight:400px;
+}
+
+.food-img,
+.decoration {
+  position: absolute;
+  z-index: 1;
+  max-width: 180px;
+}
+
+.meals {
+  bottom: 10%;
+  left: 10%;
+  width: 160px;
+  border-radius: 150px;
+}
+
+.poha {
+  top: 5%;
+  right: 10%;
+  height:150px;
+  width: 160px;
+  border-radius: 500px;
+  transform: translateX(100px); /* Right side */
+  animation: slideInRight 0.7s ease-out forwards;
+
+}
+.dosa{
+  top:5%;
+  left: 10%;
+  height:150px;
+  width:160px;
+  border-radius:100px;
+
+}
+
+
+.vadapav {
+  right: 10%;
+  top: 60%;
+  width: 140px;
+  height:150px;
+  border-radius: 70px;
+}
+
+.leaf {
+  top: 10%;
+  left: 50%;
+  width: 30px;
+}
+.biryani{
+ bottom: 8%;
+  left: 45%;
+  width: 160px;
+  height:120px;
+  border-radius: 300px;
+}
+
+.food-img,
+.decoration {
+  opacity: 0;
+  transform: translateX(-100px);
+  animation:  slideInLeft 0.7s ease-out forwards;
+}
+
+/* Optional delay for staggered entry */
+.food-img:nth-child(1) { animation-delay: 0.1s; }
+.food-img:nth-child(2) { animation-delay: 0.2s; }
+.food-img:nth-child(3) { animation-delay: 0.3s; }
+.decoration:nth-child(4) { animation-delay: 0.4s; }
+.decoration:nth-child(5) { animation-delay: 0.5s; }
+.decoration:nth-child(6) { animation-delay: 0.6s; }
+
+/* Animation keyframes */
+@keyframes  slideInLeft {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/*style for card*/
+.food-card {
+  width: 280px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  transition: transform 0.3s;
+  margin: 16px;
+}
+
+.food-card:hover {
+  transform: scale(1.02);
+}
+
+.food-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.food-details {
+  padding: 16px;
+}
+
+.food-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+  color: #333;
+}
+
+.food-desc {
+  font-size: 14px;
+  color: #666;
+  margin: 4px 0;
+}
+
+.food-meta {
+  font-size: 13px;
+  color: #888;
+}
+
+.food-offer {
+  color: #e53935;
+  font-weight: bold;
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.quantity-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.quantity-controls button {
+  width: 28px;
+  height: 28px;
+  font-size: 18px;
+  border: none;
+ 
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.quantity-controls span {
+  font-size: 16px;
+  min-width: 20px;
+  text-align: center;
+}
+
+.price {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}

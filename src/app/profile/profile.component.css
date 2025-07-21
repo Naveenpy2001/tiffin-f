@@ -1,0 +1,85 @@
+.profile-container {
+  max-width: 700px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  border: 2px solid #e53935;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.profile-container h2 {
+  text-align: center;
+  color: #e53935;
+  font-size: 28px;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+}
+
+.info label {
+  font-weight: bold;
+  color: #e53935;
+  margin-top: 12px;
+  display: block;
+}
+
+.info p {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.section {
+  margin-top: 30px;
+}
+
+.section h3 {
+  color: #e53935;
+  font-size: 20px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 5px;
+}
+
+.section ul {
+  list-style: disc;
+  padding-left: 20px;
+  color: #444;
+}
+
+.section li {
+  margin-bottom: 8px;
+}
+
+.small-btn {
+  margin-left: 10px;
+  padding: 4px 10px;
+  background: #e53935;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.small-btn:hover {
+  background: #c62828;
+}
+
+.edit-btn {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.edit-btn button {
+  background-color: #e53935;
+  border: none;
+  color: white;
+  padding: 10px 24px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.edit-btn button:hover {
+  background-color: #c62828;
+}
